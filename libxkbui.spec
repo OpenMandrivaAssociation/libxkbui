@@ -1,6 +1,6 @@
 %define name	libxkbui
 %define version	1.0.2
-%define release	%mkrel 8
+%define release	%mkrel 9
 
 %define libname		%mklibname xkbui 1
 %define develname	%mklibname xkbui -d
@@ -14,12 +14,10 @@ Group:		Development/X11
 License:	MIT
 URL:		http://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.bz2
+Patch0:		libxkbui-1.0.2-drop-xt.patch
 BuildRoot:	%{_tmppath}/%{name}-root
-
 BuildRequires: libx11-devel >= 1.0.0
 BuildRequires: libxkbfile-devel >= 1.0.1
-BuildRequires: libxt-devel >= 1.0.0
-BuildRequires: x11-util-macros >= 1.0.1
 
 %description
 The xkbui Library
@@ -85,11 +83,11 @@ Static development files for %{name}
 
 %prep
 %setup -q -n libxkbui-%{version}
+%patch0 -p0
 
 %build
-%configure2_5x	--x-includes=%{_includedir}\
-		--x-libraries=%{_libdir}
-
+autoreconf -fi
+%configure2_5x
 %make
 
 %install
