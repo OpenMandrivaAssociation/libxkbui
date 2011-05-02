@@ -1,6 +1,6 @@
 %define name	libxkbui
 %define version	1.0.2
-%define release	%mkrel 9
+%define release	%mkrel 10
 
 %define libname		%mklibname xkbui 1
 %define develname	%mklibname xkbui -d
