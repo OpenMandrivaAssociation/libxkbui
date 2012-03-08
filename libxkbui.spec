@@ -1,6 +1,6 @@
 %define name	libxkbui
 %define version	1.0.2
-%define release	%mkrel 10
+%define release	%mkrel 11
 
 %define libname		%mklibname xkbui 1
 %define develname	%mklibname xkbui -d
@@ -49,11 +49,6 @@ Conflicts: libxorg-x11-devel < 7.0
 
 %description -n %{develname}
 Development files for %{name}
-
-%pre -n %{develname}
-if [ -h %{_includedir}/X11 ]; then
-	rm -f %{_includedir}/X11
-fi
 
 %files -n %{develname}
 %defattr(-,root,root)
