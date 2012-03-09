@@ -53,7 +53,6 @@ Development files for %{name}
 %files -n %{develname}
 %defattr(-,root,root)
 %{_libdir}/libxkbui.so
-%{_libdir}/libxkbui.la
 %{_libdir}/pkgconfig/xkbui.pc
 %{_includedir}/X11/extensions/XKBui.h
 
@@ -72,7 +71,7 @@ Static development files for %{name}
 
 %files -n %{staticname}
 %defattr(-,root,root)
-%{_libdir}/libxkbui.a
+%{_libdir}/libxkbui.*a
 
 #-----------------------------------------------------------
 
