@@ -103,3 +103,72 @@ rm -rf %{buildroot}
 %{_libdir}/libxkbui.so.1
 %{_libdir}/libxkbui.so.1.0.0
 
+
+
+%changelog
+* Mon May 02 2011 Oden Eriksson <oeriksson@mandriva.com> 1.0.2-10mdv2011.0
++ Revision: 662424
+- mass rebuild
+
+* Mon Feb 07 2011 Funda Wang <fwang@mandriva.org> 1.0.2-9
++ Revision: 636542
+- it has nothing to do with xt
+
+* Sun Nov 28 2010 Oden Eriksson <oeriksson@mandriva.com> 1.0.2-8mdv2011.0
++ Revision: 602620
+- rebuild
+
+* Tue Mar 16 2010 Oden Eriksson <oeriksson@mandriva.com> 1.0.2-7mdv2010.1
++ Revision: 520966
+- rebuilt for 2010.1
+
+* Wed Sep 02 2009 Christophe Fergeau <cfergeau@mandriva.com> 1.0.2-6mdv2010.0
++ Revision: 425929
+- rebuild
+
+* Tue Jun 17 2008 Thierry Vignaud <tv@mandriva.org> 1.0.2-5mdv2009.0
++ Revision: 223078
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Sun Jan 13 2008 Thierry Vignaud <tv@mandriva.org> 1.0.2-4mdv2008.1
++ Revision: 150861
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Sat Aug 04 2007 Adam Williamson <awilliamson@mandriva.org> 1.0.2-3mdv2008.0
++ Revision: 58828
+- rebuild for 2008
+- new devel policy
+- spec clean
+
+
+* Wed May 31 2006 Gustavo Pichorim Boiko <boiko@mandriva.com>
++ 2006-05-31 18:32:34 (31796)
+- rebuild to fix cooker uploading
+
+* Mon May 29 2006 Andreas Hasenack <andreas@mandriva.com>
++ 2006-05-29 14:36:37 (31646)
+- renamed mdv to packages because mdv is too generic and it's hosting only packages anyway
+
+* Thu May 25 2006 Gustavo Pichorim Boiko <boiko@mandriva.com>
++ 2006-05-25 20:17:57 (31598)
+- X11R7.1
+
+* Thu May 04 2006 Gustavo Pichorim Boiko <boiko@mandriva.com>
++ 2006-05-04 21:25:17 (26918)
+- increment release
+
+* Thu May 04 2006 Gustavo Pichorim Boiko <boiko@mandriva.com>
++ 2006-05-04 19:54:51 (26912)
+- fixed more dependencies
+
+* Thu Apr 27 2006 Gustavo Pichorim Boiko <boiko@mandriva.com>
++ 2006-04-27 04:02:05 (26704)
+- Adding X.org 7.0 to the repository
+
