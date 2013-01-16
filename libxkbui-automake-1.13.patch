@@ -1,0 +1,11 @@
+--- libxkbui-1.0.2/configure.ac.bero	2013-01-16 00:56:49.976950839 +0100
++++ libxkbui-1.0.2/configure.ac	2013-01-16 00:57:48.274253979 +0100
+@@ -27,7 +27,7 @@ AC_INIT(libxkbui, 1.0.2, [https://bugs.f
+ AM_INIT_AUTOMAKE([dist-bzip2])
+ AM_MAINTAINER_MODE
+ 
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADERS([config.h])
+ 
+ # Check for progs
+ AC_PROG_CC

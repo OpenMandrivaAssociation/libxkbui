@@ -15,9 +15,16 @@ License:	MIT
 URL:		http://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.bz2
 Patch0:		libxkbui-1.0.2-drop-xt.patch
-BuildRoot:	%{_tmppath}/%{name}-root
+Patch1:		libxkbui-automake-1.13.patch
 BuildRequires: libx11-devel >= 1.0.0
 BuildRequires: libxkbfile-devel >= 1.0.1
+
+%track
+prog %name = {
+	url = http://xorg.freedesktop.org/releases/individual/lib/
+	regex = %name-(__VER__)\.tar\.bz2
+	version = %version
+}
 
 %description
 The xkbui Library
@@ -78,6 +85,7 @@ Static development files for %{name}
 %prep
 %setup -q -n libxkbui-%{version}
 %patch0 -p0
+%patch1 -p1 -b .am113~
 
 %build
 autoreconf -fi
@@ -87,16 +95,6 @@ autoreconf -fi
 %install
 rm -rf %{buildroot}
 %makeinstall_std
-
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
 
 %files -n %{libname}
 %defattr(-,root,root)
