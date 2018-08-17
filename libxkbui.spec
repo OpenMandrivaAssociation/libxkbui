@@ -5,7 +5,7 @@
 Summary:	The xkbui Library
 Name:		libxkbui
 Version:	1.0.2
-Release:	21
+Release:	22
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
@@ -14,13 +14,6 @@ Patch0:		libxkbui-1.0.2-drop-xt.patch
 Patch1:		libxkbui-automake-1.13.patch
 BuildRequires:	pkgconfig(x11) >= 1.0.0
 BuildRequires:	pkgconfig(xkbfile) >= 1.0.1
-
-%track
-prog %{name} = {
-	url = http://xorg.freedesktop.org/releases/individual/lib/
-	regex = %{name}-(__VER__)\.tar\.bz2
-	version = %{version}
-}
 
 %description
 The xkbui Library
@@ -49,7 +42,7 @@ Development files for %{name}
 autoreconf -fi
 
 %build
-%configure2_5x --disable-static
+%configure --disable-static
 %make
 
 %install
